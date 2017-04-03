@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+## Test Instructions
+* Clone project
+* `npm install`
+* `ng serve`
+* Go to `http://localhost:4200/eager`. Everything works when modules are eagerly loaded.
+* Go to `http://localhost:4200/lazy`. See console for
+    >  Error: BrowserModule has already been loaded. If you need access to common directives such as NgIf and NgFor from a lazy loaded module, import CommonModule instead.
+
+* Comment the import of NoopAnimationsModule in src\app\shared\shared.module.ts (lines 6 and 15).
+* Go to `http://localhost:4200/lazy`. Works fine now.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
